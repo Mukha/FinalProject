@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FinalProject:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="FinalProject.war">
+      <element id="artifact" artifact-name="FinalProject:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.hibernate:hibernate-entitymanager:4.2.16.Final" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
