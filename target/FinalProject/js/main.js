@@ -9,19 +9,9 @@ findAll();
 // Nothing to delete in initial application state
 $('#btnDelete').hide();
 
-// Register listeners
 $('#btnSearch').click(function() {
 	search($('#searchKey').val());
 	return false;
-});
-
-// Trigger search when pressing 'Return' on search key input field
-$('#searchKey').keypress(function(e){
-	if(e.which == 13) {
-		search($('#searchKey').val());
-		e.preventDefault();
-		return false;
-    }
 });
 
 $('#btnAdd').click(function() {
@@ -113,7 +103,7 @@ function addLaptop() {
 			$('#btnDelete').show();
 			$('#laptopId').val(data.id);
 		},
-		error: function(jqXHR, textStatus, errorThrown){
+		error: function(jqXHR, textStatus){
 			alert('addLaptop error: ' + textStatus);
 		}
 	});
@@ -151,7 +141,7 @@ function deleteLaptop() {
 }
 
 function renderList(data) {
-	// JAX-RS serializes an empty list as null, and a 'collection of one' as an object (not an 'array of one')
+
 	var list = data == null ? [] : (data instanceof Array ? data : [data]);
 
 	$('#laptopList li').remove();
